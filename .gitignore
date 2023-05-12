@@ -1,0 +1,11 @@
+.vs/
+Library/
+Logs/
+obj/
+Packages/
+ProjectSettings/
+UserSettings/
+venv/
+.vsconfig
+Assembly-CSharp.csproj
+ML-Agents-game.sln
