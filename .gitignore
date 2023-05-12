@@ -14,3 +14,6 @@ Unity.ML-Agents.CommunicatorObjects.csproj
 Unity.ML-Agents.csproj
 Unity.ML-Agents.Editor.csproj
 UpgradeLog.htm
+.html
+.sln
+.csproj
