@@ -1,0 +1,65 @@
+{
+    "MoveToGoalObstacle": {
+        "checkpoints": [
+            {
+                "steps": 1499975,
+                "file_path": "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-1499975.onnx",
+                "reward": 0.8371666769186655,
+                "creation_time": 1683921611.8603477,
+                "auxillary_file_paths": [
+                    "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-1499975.pt"
+                ]
+            },
+            {
+                "steps": 1999982,
+                "file_path": "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-1999982.onnx",
+                "reward": -0.5594583985706171,
+                "creation_time": 1683922187.4409292,
+                "auxillary_file_paths": [
+                    "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-1999982.pt"
+                ]
+            },
+            {
+                "steps": 2499949,
+                "file_path": "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-2499949.onnx",
+                "reward": -0.001800023391842842,
+                "creation_time": 1683922782.0055838,
+                "auxillary_file_paths": [
+                    "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-2499949.pt"
+                ]
+            },
+            {
+                "steps": 2999942,
+                "file_path": "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-2999942.onnx",
+                "reward": 0.24266663897368643,
+                "creation_time": 1683923396.0391097,
+                "auxillary_file_paths": [
+                    "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-2999942.pt"
+                ]
+            },
+            {
+                "steps": 3000006,
+                "file_path": "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-3000006.onnx",
+                "reward": 0.24266663897368643,
+                "creation_time": 1683923396.109946,
+                "auxillary_file_paths": [
+                    "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-3000006.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3000006,
+            "file_path": "results\\moveToGoalObstacle-3\\MoveToGoalObstacle.onnx",
+            "reward": 0.24266663897368643,
+            "creation_time": 1683923396.109946,
+            "auxillary_file_paths": [
+                "results\\moveToGoalObstacle-3\\MoveToGoalObstacle\\MoveToGoalObstacle-3000006.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
