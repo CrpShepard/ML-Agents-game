@@ -9,3 +9,8 @@ venv/
 .vsconfig
 Assembly-CSharp.csproj
 ML-Agents-game.sln
+ML-Agent-game.sln
+Unity.ML-Agents.CommunicatorObjects.csproj
+Unity.ML-Agents.csproj
+Unity.ML-Agents.Editor.csproj
+UpgradeLog.htm
