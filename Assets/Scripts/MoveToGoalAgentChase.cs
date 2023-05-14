@@ -12,11 +12,17 @@ public class MoveToGoalAgentChase : Agent
     [SerializeField] private Material loseMaterial;
     [SerializeField] private MeshRenderer floorMeshRenderer;
 
+    float targetMoveSpeed = 1.0f;
+    Vector3 targetMovePosition = Vector3.zero;
+
     public override void OnEpisodeBegin()
     {
         //transform.localPosition = Vector3.zero;
-        transform.SetLocalPositionAndRotation(new Vector3(Random.Range(-8.0f, 8.0f), 0, Random.Range(-8.0f, 8.0f)), Quaternion.identity);
-        targetTransform.localPosition = new Vector3(Random.Range(-8.0f, 8.0f), 0, Random.Range(-8.0f, 8.0f));
+        transform.SetLocalPositionAndRotation(new Vector3(Random.Range(-18.0f, 18.0f), 0, Random.Range(-18.0f, 18.0f)), Quaternion.identity);
+        targetTransform.localPosition = new Vector3(Random.Range(-19.0f, 19.0f), 0, Random.Range(-19.0f, 19.0f));
+
+        targetMoveSpeed = Random.Range(2f, 2.9f);
+        targetMovePosition = new Vector3(Random.Range(-19.0f, 19.0f), 0, Random.Range(-19.0f, 19.0f));
     }
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -32,6 +38,12 @@ public class MoveToGoalAgentChase : Agent
 
         float moveSpeed = 3f;
         transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
+        if (targetTransform.localPosition != targetMovePosition)
+            targetTransform.localPosition = Vector3.MoveTowards(targetTransform.localPosition, targetMovePosition, targetMoveSpeed * Time.deltaTime);
+        else
+        {
+            targetMovePosition = new Vector3(Random.Range(-19.0f, 19.0f), 0, Random.Range(-19.0f, 19.0f));
+        }
 
         AddReward(-0.0005f); // for each step per time step
     }
@@ -48,31 +60,31 @@ public class MoveToGoalAgentChase : Agent
     {
         if (other.TryGetComponent<Goal>(out Goal goal))
         {
-            SetReward(1.0f);
-            //floorMeshRenderer.material = winMaterial;
+            AddReward(1.0f);
+            floorMeshRenderer.material = winMaterial;
             EndEpisode();
         }
-        //if (other.TryGetComponent<Wall>(out Wall wall))
-        //{
-        //    SetReward(-0.1f);
-        //    //floorMeshRenderer.material = loseMaterial;
-        //    //EndEpisode();
-        //}
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.TryGetComponent<Wall>(out Wall wall))
+        if (other.TryGetComponent<Wall>(out Wall wall))
         {
-            AddReward(-0.1f);
+            AddReward(-1.0f);
+            floorMeshRenderer.material = loseMaterial;
+            EndEpisode();
         }
     }
 
-    private void OnCollisionStay(Collision other)
-    {
-        if (other.gameObject.TryGetComponent<Wall>(out Wall wall))
-        {
-            AddReward(-0.01f);
-        }
-    }
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.TryGetComponent<Wall>(out Wall wall))
+    //    {
+    //        AddReward(-0.1f);
+    //    }
+    //}
+
+    //private void OnCollisionStay(Collision other)
+    //{
+    //    if (other.gameObject.TryGetComponent<Wall>(out Wall wall))
+    //    {
+    //        AddReward(-0.01f);
+    //    }
+    //}
 }
