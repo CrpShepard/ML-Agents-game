@@ -26,13 +26,13 @@ public class MoveToGoalAgentRandom : Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         //Debug.Log(actions.ContinuousActions[0]);
-        float moveX = actions.ContinuousActions[0];
-        float moveZ = actions.ContinuousActions[1];
+        float moveX = actions.ContinuousActions[0]; // Агент получает координату по оси X от нейронной сети
+        float moveZ = actions.ContinuousActions[1]; // Агент получает координату по оси Z от нейронной сети
 
-        float moveSpeed = 3f;
+        float moveSpeed = 3.0f;
         transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
 
-        SetReward(-0.01f); // for each step per time step
+        SetReward(-0.01f); // На каждый шаг
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -41,19 +41,19 @@ public class MoveToGoalAgentRandom : Agent
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         continuousActions[1] = Input.GetAxisRaw("Vertical");
 
-    }
+    } // Для ручного управления
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // Если агент касается объекта, у которого включен в коллайдере OnTrigger
     {
         if (other.TryGetComponent<Goal>(out Goal goal))
         {
-            SetReward(+1f);
-            floorMeshRenderer.material = winMaterial;
+            SetReward(1.0f);
+            floorMeshRenderer.material = winMaterial; // Для визуализации
             EndEpisode();
         }
         if (other.TryGetComponent<Wall>(out Wall wall))
         {
-            SetReward(-1f);
+            SetReward(-1.0f);
             floorMeshRenderer.material = loseMaterial;
             EndEpisode();
         }
