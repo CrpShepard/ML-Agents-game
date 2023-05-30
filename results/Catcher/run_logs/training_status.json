@@ -1,32 +1,32 @@
 {
-    "Chase": {
+    "Catcher": {
         "checkpoints": [
             {
-                "steps": 499998,
-                "file_path": "results\\Catcher\\Chase\\Chase-499998.onnx",
-                "reward": 0.8766538432011237,
-                "creation_time": 1684960234.1353407,
+                "steps": 499968,
+                "file_path": "results\\Catcher\\Catcher\\Catcher-499968.onnx",
+                "reward": 0.8190624918788671,
+                "creation_time": 1685373897.1042717,
                 "auxillary_file_paths": [
-                    "results\\Catcher\\Chase\\Chase-499998.pt"
+                    "results\\Catcher\\Catcher\\Catcher-499968.pt"
                 ]
             },
             {
-                "steps": 506128,
-                "file_path": "results\\Catcher\\Chase\\Chase-506128.onnx",
-                "reward": 0.8604264715138603,
-                "creation_time": 1684960302.6278162,
+                "steps": 707645,
+                "file_path": "results\\Catcher\\Catcher\\Catcher-707645.onnx",
+                "reward": 0.8893333440407728,
+                "creation_time": 1685374169.7237499,
                 "auxillary_file_paths": [
-                    "results\\Catcher\\Chase\\Chase-506128.pt"
+                    "results\\Catcher\\Catcher\\Catcher-707645.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 506128,
-            "file_path": "results\\Catcher\\Chase.onnx",
-            "reward": 0.8604264715138603,
-            "creation_time": 1684960302.6278162,
+            "steps": 707645,
+            "file_path": "results\\Catcher\\Catcher.onnx",
+            "reward": 0.8893333440407728,
+            "creation_time": 1685374169.7237499,
             "auxillary_file_paths": [
-                "results\\Catcher\\Chase\\Chase-506128.pt"
+                "results\\Catcher\\Catcher\\Catcher-707645.pt"
             ]
         }
     },

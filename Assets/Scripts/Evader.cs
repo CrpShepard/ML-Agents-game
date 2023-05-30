@@ -11,6 +11,9 @@ public class Evader : Agent
     //[SerializeField] private Material winMaterial;
     //[SerializeField] private Material loseMaterial;
     //[SerializeField] private MeshRenderer floorMeshRenderer;
+    public bool catcherIsAgent = false;
+    float targetMoveSpeed = 0.0f;
+    //Vector3 targetMovePosition = Vector3.zero;
 
     public float currentSpeed = 0.0f;
     public Vector3 lastPos;
@@ -21,6 +24,14 @@ public class Evader : Agent
     {
         //transform.localPosition = Vector3.zero;
         transform.SetLocalPositionAndRotation(new Vector3(Random.Range(-18.0f, 18.0f), 0, Random.Range(-18.0f, 18.0f)), Quaternion.identity);
+
+        if (!catcherIsAgent)
+        {
+            targetMoveSpeed = Random.Range(1f, 3f);
+            //targetMovePosition = new Vector3(Random.Range(-19.0f, 19.0f), 0, Random.Range(-19.0f, 19.0f));
+            //targetMovePosition = transform.localPosition;
+        }
+
         catcherLastPos = targetTransform.localPosition;
     }
     public override void CollectObservations(VectorSensor sensor)
@@ -43,10 +54,22 @@ public class Evader : Agent
         currentSpeed = (transform.localPosition - lastPos).magnitude / Time.deltaTime;
         lastPos = transform.localPosition;
 
+        if (!catcherIsAgent)
+        {
+            //if (targetTransform.localPosition != targetMovePosition)
+            //    targetTransform.localPosition = Vector3.MoveTowards(targetTransform.localPosition, targetMovePosition, targetMoveSpeed * Time.deltaTime);
+            //else
+            //{
+            //    targetMovePosition = new Vector3(Random.Range(-19.0f, 19.0f), 0, Random.Range(-19.0f, 19.0f));
+            //}
+            targetTransform.localPosition = Vector3.MoveTowards(targetTransform.localPosition, transform.localPosition, targetMoveSpeed * Time.deltaTime);
+        }
+
         catcherSpeed = (targetTransform.localPosition - catcherLastPos).magnitude / Time.deltaTime;
         catcherLastPos = targetTransform.localPosition;
 
         AddReward(0.0005f); // for each step per time step
+        //AddReward((transform.localPosition - targetTransform.localPosition).magnitude / 1000.0f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

@@ -1,0 +1,56 @@
+{
+    "MoveToGoalChase": {
+        "checkpoints": [
+            {
+                "steps": 499958,
+                "file_path": "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-499958.onnx",
+                "reward": -1.6577000938355924,
+                "creation_time": 1684854837.9042428,
+                "auxillary_file_paths": [
+                    "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-499958.pt"
+                ]
+            },
+            {
+                "steps": 999986,
+                "file_path": "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-999986.onnx",
+                "reward": -1.4995001032948494,
+                "creation_time": 1684855316.3287535,
+                "auxillary_file_paths": [
+                    "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-999986.pt"
+                ]
+            },
+            {
+                "steps": 1499995,
+                "file_path": "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-1499995.onnx",
+                "reward": null,
+                "creation_time": 1684855798.633538,
+                "auxillary_file_paths": [
+                    "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-1499995.pt"
+                ]
+            },
+            {
+                "steps": 1692780,
+                "file_path": "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-1692780.onnx",
+                "reward": -1.4990001041442156,
+                "creation_time": 1684856047.640393,
+                "auxillary_file_paths": [
+                    "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-1692780.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1692780,
+            "file_path": "results\\BigHouse\\MoveToGoalChase.onnx",
+            "reward": -1.4990001041442156,
+            "creation_time": 1684856047.640393,
+            "auxillary_file_paths": [
+                "results\\BigHouse\\MoveToGoalChase\\MoveToGoalChase-1692780.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

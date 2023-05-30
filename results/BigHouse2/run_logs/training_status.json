@@ -1,0 +1,29 @@
+{
+    "MoveToGoalChase": {
+        "checkpoints": [
+            {
+                "steps": 89311,
+                "file_path": "results\\BigHouse2\\MoveToGoalChase\\MoveToGoalChase-89311.onnx",
+                "reward": -2.421363416381858,
+                "creation_time": 1684852467.5304844,
+                "auxillary_file_paths": [
+                    "results\\BigHouse2\\MoveToGoalChase\\MoveToGoalChase-89311.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 89311,
+            "file_path": "results\\BigHouse2\\MoveToGoalChase.onnx",
+            "reward": -2.421363416381858,
+            "creation_time": 1684852467.5304844,
+            "auxillary_file_paths": [
+                "results\\BigHouse2\\MoveToGoalChase\\MoveToGoalChase-89311.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
