@@ -98,10 +98,10 @@ public class Evader : Agent
 
     private void OnCollisionEnter(Collision other)
     {
-        //if (other.gameObject.TryGetComponent<Wall>(out Wall wall))
-        //{
-        //    AddReward(-0.1f);
-        //}
+        if (other.gameObject.TryGetComponent<Wall>(out Wall wall))
+        {
+            AddReward(-0.0005f);
+        }
         if (other.gameObject.tag == "Catcher")
         {
             AddReward(-1.0f);
@@ -109,11 +109,11 @@ public class Evader : Agent
         }
     }
 
-    //private void OnCollisionStay(Collision other)
-    //{
-    //    if (other.gameObject.TryGetComponent<Wall>(out Wall wall))
-    //    {
-    //        AddReward(-0.01f);
-    //    }
-    //}
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.TryGetComponent<Wall>(out Wall wall))
+        {
+            AddReward(-0.0005f);
+        }
+    }
 }
