@@ -2,16 +2,14 @@ behaviors:
   Catcher:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 256 # uses GPU memory
-      buffer_size: 2048 # uses RAM memory
+      batch_size: 256
+      buffer_size: 2048
       learning_rate: 3.0e-4
       beta: 5.0e-4
       epsilon: 0.2
       lambd: 0.95
       num_epoch: 3
       learning_rate_schedule: linear
-      #beta_schedule: constant
-      #epsilon_schedule: linear
     network_settings:
       normalize: false
       hidden_units: 128
@@ -26,16 +24,14 @@ behaviors:
   Evader:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 256 # uses GPU memory
-      buffer_size: 2048 # uses RAM memory
+      batch_size: 256
+      buffer_size: 2048
       learning_rate: 3.0e-4
       beta: 5.0e-4
       epsilon: 0.2
       lambd: 0.95
       num_epoch: 3
       learning_rate_schedule: linear
-      #beta_schedule: constant
-      #epsilon_schedule: linear
     network_settings:
       normalize: false
       hidden_units: 128
